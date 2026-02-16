@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ati Srivastava - Developer Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- Background Effects -->
+  <div class="stars"></div>
+  <canvas id="background"></canvas>
+
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <a href="#home" class="nav-logo"><span>Ati's</span> Portfolio</a>
+
+      <ul id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile overlay -->
+  <div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div>
+
+  <main>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-text">
+          <p class="greeting">Hello, I'm</p>
+          <h1><span class="name-highlight">Ati Srivastava</span></h1>
+          <p class="tagline">A passionate</p>
+          <div id="element"></div>
+          <p class="hero-description">
+            I craft modern, responsive and beautiful web experiences.
+            Let's build something amazing together.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-outline">Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="assets/images/bb.png" alt="Ati Srivastava">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+    <section id="skills">
+      <div class="section-title fade-in">
+        <h2>My <span>Skills</span></h2>
+        <p>Technologies and tools I work with</p>
+        <div class="line"></div>
+      </div>
+      <div class="skills-grid fade-in">
+        <div class="skill-card">
+          <div class="skill-icon">🌐</div>
+          <h4>HTML5</h4>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🎨</div>
+          <h4>CSS3</h4>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">⚡</div>
+          <h4>JavaScript</h4>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">⚛️</div>
+          <h4>React</h4>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">☕</div>
+          <h4>Java</h4>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🗄️</div>
+          <h4>MySQL</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES SECTION ===== -->
+    <section id="services">
+      <div class="section-title fade-in">
+        <h2>My <span>Services</span></h2>
+        <p>I provide modern and responsive web development services to help you build a strong online presence.</p>
+        <div class="line"></div>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-icon">🌐</div>
+          <h3>Web Design</h3>
+          <p>Modern, attractive and clean UI design for your website with a professional look.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">📱</div>
+          <h3>Responsive Website</h3>
+          <p>Mobile-friendly and fully responsive websites that work smoothly on all devices.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">⚡</div>
+          <h3>Frontend Development</h3>
+          <p>I build fast and interactive websites using HTML, CSS, JavaScript and modern UI effects.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">🛠️</div>
+          <h3>Website Fixing</h3>
+          <p>Fix bugs, improve UI, speed up website performance and make your site look better.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section id="projects">
+      <div class="section-title fade-in">
+        <h2>My <span>Projects</span></h2>
+        <p>Here are some of my recent works</p>
+        <div class="line"></div>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card fade-in">
+          <img src="assets/images/p1.png" alt="Project 1" class="project-img">
+          <div class="project-info">
+            <h3>Portfolio Website</h3>
+            <p>A personal portfolio website with modern design and animations.</p>
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#">Live Demo</a>
+              <a href="#">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <img src="assets/images/p1.png" alt="Project 2" class="project-img">
+          <div class="project-info">
+            <h3>Web Application</h3>
+            <p>A responsive web application with interactive features and clean UI.</p>
+            <div class="project-tags">
+              <span>React</span>
+              <span>CSS</span>
+              <span>API</span>
+            </div>
+            <div class="project-links">
+              <a href="#">Live Demo</a>
+              <a href="#">Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY SECTION ===== -->
+    <section id="gallery">
+      <div class="section-title fade-in">
+        <h2>My <span>Gallery</span></h2>
+        <p>Some snapshots of my work and creative journey</p>
+        <div class="line"></div>
+      </div>
+
+      <div class="gallery-grid fade-in">
+        <img src="assets/images/p1.png" alt="Gallery image 1">
+      </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about">
+      <div class="section-title fade-in">
+        <h2>About <span>Me</span></h2>
+        <p>Get to know me better</p>
+        <div class="line"></div>
+      </div>
+
+      <div class="about-content fade-in">
+        <div class="about-img">
+          <img src="assets/images/bb.png" alt="Ati Srivastava">
+        </div>
+        <div class="about-text">
+          <h3>Hi, I'm Ati Srivastava!</h3>
+          <p>
+            I'm a passionate web developer who loves creating beautiful and functional websites.
+            I specialize in frontend development using HTML, CSS, JavaScript, and React.
+          </p>
+          <p>
+            I enjoy turning ideas into reality through code and am always eager to
+            learn new technologies and improve my skills.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <h4>5+</h4>
+              <p>Projects</p>
+            </div>
+            <div class="stat">
+              <h4>6+</h4>
+              <p>Skills</p>
+            </div>
+            <div class="stat">
+              <h4>100%</h4>
+              <p>Dedication</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact">
+      <div class="section-title fade-in">
+        <h2>Contact <span>Me</span></h2>
+        <p>Have a project in mind? Let's talk!</p>
+        <div class="line"></div>
+      </div>
+
+      <div class="contact-wrapper fade-in">
+        <div class="contact-info">
+          <h3>Let's work together</h3>
+          <p>If you want to work with me, have any project idea, or just want to say hello, feel free to send me a message.</p>
+          <div class="contact-detail">
+            <div class="icon">📧</div>
+            <div>
+              <strong>Email</strong><br>
+              <span>yourmail@gmail.com</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="icon">📍</div>
+            <div>
+              <strong>Location</strong><br>
+              <span>India</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" action="https://formsubmit.co/atisrivastava80@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New message from portfolio site">
+          <input type="hidden" name="_next" value="thankyou.html">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message ✉️</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-links">
+      <a href="#" title="GitHub">💻</a>
+      <a href="#" title="LinkedIn">💼</a>
+      <a href="#" title="Twitter">🐦</a>
+      <a href="#" title="Instagram">📸</a>
+    </div>
+    <p>&copy; 2026 Ati Srivastava. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    // Typed.js animation
+    var typed = new Typed('#element', {
+      strings: ['&gt; Web Developer', '&gt; Video Editor', '&gt; Web Designer'],
+      typeSpeed: 60,
+      backSpeed: 40,
+      loop: true
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('open');
+      document.getElementById('hamburger').classList.toggle('active');
+      document.getElementById('navOverlay').classList.toggle('active');
+      document.body.style.overflow = document.getElementById('navMenu').classList.contains('open') ? 'hidden' : '';
+    }
+
+    // Close menu when a nav link is clicked
+    document.querySelectorAll('#navMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (document.getElementById('navMenu').classList.contains('open')) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // Scroll: header shadow + scroll-to-top button
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      const scrollBtn = document.getElementById('scrollTop');
+      if (window.scrollY > 80) {
+        header.classList.add('scrolled');
+        scrollBtn.classList.add('visible');
+      } else {
+        header.classList.remove('scrolled');
+        scrollBtn.classList.remove('visible');
+      }
+    });
+
+    // Scroll fade-in animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Background canvas - shooting stars
+    const canvas = document.getElementById("background");
+    const ctx = canvas.getContext("2d");
+    let stars = [];
+    let shootingStars = [];
+    const STAR_COUNT = 800;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    for (let i = 0; i < STAR_COUNT; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.5,
+        alpha: Math.random()
+      });
+    }
+
+    function createShootingStar() {
+      shootingStars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height / 2,
+        len: Math.random() * 100 + 50,
+        speed: Math.random() * 10 + 8,
+        size: Math.random() * 1 + 1,
+        angle: Math.random() * Math.PI / 3 + Math.PI / 4
+      });
+      if (shootingStars.length > 2) shootingStars.shift();
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      stars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
+        ctx.fill();
+        star.alpha += (Math.random() - 0.5) * 0.02;
+        star.alpha = Math.max(0, Math.min(1, star.alpha));
+      });
+
+      shootingStars.forEach((shoot, index) => {
+        ctx.save();
+        ctx.beginPath();
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.8)";
+        ctx.lineWidth = shoot.size;
+        ctx.moveTo(shoot.x, shoot.y);
+        ctx.lineTo(
+          shoot.x + Math.cos(shoot.angle) * shoot.len,
+          shoot.y + Math.sin(shoot.angle) * shoot.len
+        );
+        ctx.stroke();
+        ctx.restore();
+
+        shoot.x += Math.cos(shoot.angle) * shoot.speed;
+        shoot.y += Math.sin(shoot.angle) * shoot.speed;
+
+        if (shoot.x > canvas.width || shoot.y > canvas.height) {
+          shootingStars.splice(index, 1);
+        }
+      });
+
+      if (Math.random() < 0.015) createShootingStar();
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+
+</body>
+
+</html>

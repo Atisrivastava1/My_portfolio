@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Ati Srivastava</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="stars"></div>
+  <canvas id="background"></canvas>
+
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <a href="index.html" class="nav-logo"><span>Ati's</span> Portfolio</a>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#projects" class="active">Projects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+  <div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div>
+
+  <main>
+    <section id="projects" style="padding-top: 120px;">
+      <div class="section-title fade-in">
+        <h2>My <span>Projects</span></h2>
+        <p>Here are some of my recent works</p>
+        <div class="line"></div>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card fade-in">
+          <img src="assets/images/p1.png" alt="Project 1" class="project-img">
+          <div class="project-info">
+            <h3>Portfolio Website</h3>
+            <p>A personal portfolio website with modern design, animations and responsive layout.</p>
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#">Live Demo</a>
+              <a href="#">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <img src="assets/images/p1.png" alt="Project 2" class="project-img">
+          <div class="project-info">
+            <h3>Web Application</h3>
+            <p>A responsive web application with interactive features and clean UI.</p>
+            <div class="project-tags">
+              <span>React</span>
+              <span>CSS</span>
+              <span>API</span>
+            </div>
+            <div class="project-links">
+              <a href="#">Live Demo</a>
+              <a href="#">Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="#" title="GitHub">💻</a>
+      <a href="#" title="LinkedIn">💼</a>
+      <a href="#" title="Twitter">🐦</a>
+      <a href="#" title="Instagram">📸</a>
+    </div>
+    <p>&copy; 2026 Ati Srivastava. All Rights Reserved.</p>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('open');
+      document.getElementById('hamburger').classList.toggle('active');
+      document.getElementById('navOverlay').classList.toggle('active');
+      document.body.style.overflow = document.getElementById('navMenu').classList.contains('open') ? 'hidden' : '';
+    }
+    document.querySelectorAll('#navMenu a').forEach(link => {
+      link.addEventListener('click', () => { if (document.getElementById('navMenu').classList.contains('open')) toggleMenu(); });
+    });
+    window.addEventListener('scroll', () => {
+      document.querySelector('header').classList.toggle('scrolled', window.scrollY > 80);
+      document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 80);
+    });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    const canvas = document.getElementById("background");
+    const ctx = canvas.getContext("2d");
+    let stars = [];
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    resizeCanvas(); window.addEventListener("resize", resizeCanvas);
+    for (let i = 0; i < 600; i++) stars.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*1.5, alpha: Math.random() });
+    function animate() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      stars.forEach(s => { ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fillStyle=`rgba(255,255,255,${s.alpha})`; ctx.fill(); s.alpha+=(Math.random()-0.5)*0.02; s.alpha=Math.max(0,Math.min(1,s.alpha)); });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+
+</body>
+</html>

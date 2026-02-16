@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Ati Srivastava</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="stars"></div>
+  <canvas id="background"></canvas>
+
+  <div class="thankyou-page">
+    <div class="thankyou-card">
+      <div class="check-icon">✅</div>
+      <h1>Thanks — message sent!</h1>
+      <p>Your message was delivered successfully. I'll get back to you as soon as I can.</p>
+      <a href="index.html" class="btn btn-primary">Return to Home</a>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("background");
+    const ctx = canvas.getContext("2d");
+    let stars = [];
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    resizeCanvas(); window.addEventListener("resize", resizeCanvas);
+    for (let i = 0; i < 600; i++) stars.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*1.5, alpha: Math.random() });
+    function animate() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      stars.forEach(s => { ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fillStyle=`rgba(255,255,255,${s.alpha})`; ctx.fill(); s.alpha+=(Math.random()-0.5)*0.02; s.alpha=Math.max(0,Math.min(1,s.alpha)); });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+
+</body>
+</html>
